@@ -13,3 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require bootstrap
+
+$(function(){
+$('#send').on('click', function() {
+  $('.form-control').removeClass("alert-danger alert-success");
+  $('#alerts').empty();
+
+  $('.form-control').each(function(index){
+    if ( $(this).val() ){
+      $(this).addClass("alert-success");
+    } else {
+      $(this).addClass("alert-danger");
+    }
+  });
+
+});
+});
